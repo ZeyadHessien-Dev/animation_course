@@ -14,7 +14,7 @@ class _AnimateWidgetState extends State<AnimateWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: AppBar( 
         title: const Text('Animated'),
       ),
       body: Center(
