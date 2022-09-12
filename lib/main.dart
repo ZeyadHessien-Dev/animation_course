@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'modules/animation_container.dart';
+import 'modules/animation_widget/animation_container.dart';
 
 void main() {
   runApp(const MyApp());
