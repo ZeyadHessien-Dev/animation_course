@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'modules/animation_widget/animation_example.dart';
+import 'modules/animation_widget/animation_controller.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: AnimationExample(),
+      home: AnimationControllerLesson(),
     );
   }
 }
