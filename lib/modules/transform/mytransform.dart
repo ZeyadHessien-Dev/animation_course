@@ -18,8 +18,8 @@ class _MyTransformState extends State<MyTransform> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Center(
-            child: Transform.scale(
-              scale: rotVal,
+            child: Transform(
+              transform: Matrix4.rotationZ(3.14 / 1)..scale(1.1)..translate(-1.0),
               origin: const Offset(100, -50),
               child: Container(
                 width: 200,
@@ -27,43 +27,6 @@ class _MyTransformState extends State<MyTransform> {
                 color: Colors.deepOrange,
               ),
             ),
-
-            // child: Transform.rotate(
-            //   angle: rotVal,
-            //   origin: const Offset(100, -50), // can use it in any Transform
-            //   child: Container(
-            //     width: 200,
-            //     height: 100,
-            //     color: Colors.deepOrange,
-            //   ),
-            // ),
-          ),
-          const SizedBox(
-            height: 50,
-          ),
-          // Rotate
-          // Slider(
-          //   value: rotVal,
-          //   onChanged: (value) {
-          //     setState(() {
-          //       rotVal = value;
-          //     });
-          //   },
-          //   max: 2 * 3.14,
-          //   min: 0,
-          // ),
-
-
-          // Scale
-          Slider(
-            value: rotVal,
-            onChanged: (value) {
-              setState(() {
-                rotVal = value;
-              });
-            },
-            max: 3.0,
-            min: 0.0,
           ),
         ],
       ),
