@@ -21,6 +21,7 @@ class _AnimateWidgetState extends State<AnimateWidget> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+
             AnimatedContainer(
               duration: const Duration(
                 seconds: 1,
