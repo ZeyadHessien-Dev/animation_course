@@ -6,7 +6,7 @@ class MyTransform extends StatefulWidget {
 }
 
 class _MyTransformState extends State<MyTransform> {
-  var rotVal = 0.0;
+  var rotVal = 1.0;
 
   @override
   Widget build(BuildContext context) {
@@ -18,39 +18,43 @@ class _MyTransformState extends State<MyTransform> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Center(
-
-            // child: Transform.scale(
-            //   scale: 1.1,
-            //   child: Container(
-            //     width: 100,
-            //     height: 100,
-            //     color: Colors.deepOrange,
-            //   ),
-            // ),
-
-
-
-            // child: Transform.translate(
-            //   // Positive number [Right and Top]
-            //   offset: const Offset(100, 0),
-            //   child: Container(
-            //     width: 100,
-            //     height: 100,
-            //     color: Colors.deepOrange,
-            //   ),
-            // ),
-            child: Transform.rotate(
-              angle: rotVal,
+            child: Transform.scale(
+              scale: rotVal,
+              origin: const Offset(100, -50),
               child: Container(
                 width: 200,
                 height: 100,
                 color: Colors.deepOrange,
               ),
             ),
+
+            // child: Transform.rotate(
+            //   angle: rotVal,
+            //   origin: const Offset(100, -50), // can use it in any Transform
+            //   child: Container(
+            //     width: 200,
+            //     height: 100,
+            //     color: Colors.deepOrange,
+            //   ),
+            // ),
           ),
           const SizedBox(
             height: 50,
           ),
+          // Rotate
+          // Slider(
+          //   value: rotVal,
+          //   onChanged: (value) {
+          //     setState(() {
+          //       rotVal = value;
+          //     });
+          //   },
+          //   max: 2 * 3.14,
+          //   min: 0,
+          // ),
+
+
+          // Scale
           Slider(
             value: rotVal,
             onChanged: (value) {
@@ -58,13 +62,11 @@ class _MyTransformState extends State<MyTransform> {
                 rotVal = value;
               });
             },
-            max: 2 * 3.14,
-            min: 0,
+            max: 3.0,
+            min: 0.0,
           ),
         ],
       ),
     );
   }
 }
-
-
