@@ -21,6 +21,7 @@ class TwoAnimate extends PageRouteBuilder {
       return ScaleTransition(
         scale: tween.animate(curveTransition),
         child: Align(
+          alignment: AlignmentDirectional.bottomEnd,
           child: SizeTransition(
             sizeFactor: animation,
             child: child,
