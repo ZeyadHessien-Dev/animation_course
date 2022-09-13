@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-// Here Classes To Control with transition route
 class SlideRight extends PageRouteBuilder {
   var page;
 
@@ -19,10 +18,6 @@ class SlideRight extends PageRouteBuilder {
               parent: animation,
               curve: Curves.linear,
             );
-            // return SlideTransition(
-            //   position: tween.animate(curveAnimation),
-            //   child: child,
-            // );
 
             return ScaleTransition(
               // Here Cancel Offset [it's use it just in SlideTransition]
