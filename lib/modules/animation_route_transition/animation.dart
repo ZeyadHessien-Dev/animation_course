@@ -1,33 +1,34 @@
 import 'package:flutter/material.dart';
 
-// Here Classes To Control with transition route
 class TwoAnimate extends PageRouteBuilder {
-  var page;
+  dynamic page;
 
   TwoAnimate({this.page})
       : super(
-    pageBuilder: (context, animation, animationTwo) => page,
-    transitionsBuilder: (context, animation, animationTwo, child) {
-      var begin = 0.9;
-      var end = 1.0;
-      var tween = Tween(
-        begin: begin,
-        end: end,
-      );
-      var curveTransition = CurvedAnimation(
-        parent: animation,
-        curve: Curves.fastOutSlowIn,
-      );
-      return ScaleTransition(
-        scale: tween.animate(curveTransition),
-        child: Align(
-          alignment: AlignmentDirectional.bottomEnd,
-          child: SizeTransition(
-            sizeFactor: animation,
-            child: child,
-          ),
-        ),
-      );
-    },
-  );
+            pageBuilder: (context, animation, animationTwo) => page,
+            transitionsBuilder: (context, animation, animationTwo, child) {
+              var begin = 1.0;
+              var end = 1.0;
+              var curve = Curves.ease;
+              var tween = Tween(
+                begin: begin,
+                end: end,
+              ).chain(CurveTween(curve: curve));
+              var curvedAnimation = CurvedAnimation(
+                parent: animation,
+                curve: Curves.elasticIn,
+              );
+              return ScaleTransition(
+                scale: tween.animate(
+                  curvedAnimation,
+                ),
+                child: Align(
+                  alignment: AlignmentDirectional.bottomEnd,
+                  child: SizeTransition(
+                    sizeFactor: animation,
+                    child: child,
+                  ),
+                ),
+              );
+            });
 }
