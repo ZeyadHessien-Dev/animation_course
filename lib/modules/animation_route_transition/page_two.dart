@@ -15,7 +15,7 @@ class PageTwoScreen extends StatelessWidget {
               color: Colors.white,
               child: MaterialButton(
                 onPressed: () {
-                  Navigator.push(context, SlideRight(page: PageOneScreen()));
+                  Navigator.push(context, TwoAnimate(page: PageOneScreen()));
                 },
                 child: const Text(
                   'Go To Page One',
